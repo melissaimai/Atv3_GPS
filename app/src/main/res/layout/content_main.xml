@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <Button
+        android:id="@+id/btnConceder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/conceder"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/amount_background">
+
+    <Button
+        android:id="@+id/btnAtivar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnConceder"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="200dp"
+        android:text="@string/ativar"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/amount_background"/>
+
+    <Button
+        android:id="@+id/btnDesativar"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnConceder"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/desativar"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/amount_background"/>
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnAtivar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="200dp"
+        android:text="@string/iniciar"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/amount_background"/>
+
+    <Button
+        android:id="@+id/btnTerminar"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDesativar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="37dp"
+        android:text="@string/terminar"
+        android:textColor="@color/cardview_light_background"
+        android:background="@color/amount_background"/>
+
+    <TextView
+        android:id="@+id/txtDistancia"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnIniciar"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="246dp"
+        android:text="@string/DistanceTravelled"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/distancia"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDesativar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="20dp"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/txtElapsed"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDistancia"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="246dp"
+        android:text="@string/ElapsedTime"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <EditText
+        android:id="@+id/tempo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDesativar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="206dp"
+        android:layout_marginRight="20dp"
+        android:inputType="time"
+        android:textColor="#000" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDesativar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="307dp"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="315dp"
+        android:layout_height="231dp"
+        android:layout_below="@id/txtElapsed"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="121dp"
+        android:layout_marginRight="30dp"
+        app:srcCompat="@drawable/map" />
+
+</RelativeLayout>

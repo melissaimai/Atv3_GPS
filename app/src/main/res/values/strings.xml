@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GPS_parte2</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="conceder">Grant GPS Permission</string>
+    <string name="ativar">Activate GPS</string>
+    <string name="desativar">Disable GPS</string>
+    <string name="iniciar">Start route</string>
+    <string name="terminar">Finish route</string>
+    <string name="DistanceTravelled">Distance Travelled</string>
+    <string name="ElapsedTime">Elapsed Time</string>
+    <string name="searchAdress">Type the address</string>
+</resources>
