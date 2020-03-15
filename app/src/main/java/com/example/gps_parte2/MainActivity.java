@@ -2,10 +2,12 @@ package com.example.gps_parte2;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -110,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
             if (locationManager != null)
                 locationManager.removeUpdates(locationListener);
             last = null;
+        });
+        findViewById(R.id.floatingActionButton).setOnClickListener(ignored -> {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + ((EditText) findViewById(R.id.search)).getText()));
+            if (mapIntent.resolveActivity(getPackageManager()) != null)
+                startActivity(mapIntent);
         });
     }
 
