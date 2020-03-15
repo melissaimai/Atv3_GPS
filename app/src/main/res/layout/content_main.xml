@@ -70,6 +70,7 @@
             android:layout_weight="1"
             android:background="@color/amount_background"
             android:text="@string/terminar"
+            android:enabled="false"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>

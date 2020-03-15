@@ -17,6 +17,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private final static short PERMISSION = (short) new Random().nextInt(Short.MAX_VALUE);
@@ -28,31 +30,40 @@ public class MainActivity extends AppCompatActivity {
     private float distance;
     private int time;
     private Location last;
+    private Timer timer;
 
     private LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(final Location location) {
-            if (last == null)
-                last = location;
-            else {
+            if (last != null) {
                 distance += last.distanceTo(location);
                 distanceEditText.setText(distance + " metros");
             }
-            timeEditText.setText((++time) + " segundos");
+            last = location;
         }
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
         }
-
         @Override
         public void onProviderEnabled(String provider) {
         }
-
         @Override
         public void onProviderDisabled(String provider) {
         }
     };
+
+    private void startTimer() {
+        if (timer != null)
+            timer.cancel();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                timeEditText.setText((++time) + " segundos");
+            }
+        }, 0, 1000);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
         distanceEditText = findViewById(R.id.distancia);
         timeEditText = findViewById(R.id.tempo);
+        final Button activate = findViewById(R.id.btnAtivar);
+        final Button deactivate = findViewById(R.id.btnDesativar);
+        final Button terminate = findViewById(R.id.btnTerminar);
 
         findViewById(R.id.btnConceder).setOnClickListener(ignored -> {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION);
         });
-        final Button activate = findViewById(R.id.btnAtivar);
-        final Button deactivate = findViewById(R.id.btnDesativar);
         activate.setOnClickListener(ignored -> {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -86,12 +98,15 @@ public class MainActivity extends AppCompatActivity {
                 deactivate.setEnabled(false);
                 distanceEditText.setText("Requisitando...");
                 timeEditText.setText("Requisitando...");
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, locationListener);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100, locationListener);
+                startTimer();
+                terminate.setEnabled(true);
             }
         });
-        findViewById(R.id.btnTerminar).setOnClickListener(ignored -> {
+        terminate.setOnClickListener(ignored -> {
             activate.setEnabled(true);
             deactivate.setEnabled(true);
+            timer.cancel();
             if (locationManager != null)
                 locationManager.removeUpdates(locationListener);
             last = null;
