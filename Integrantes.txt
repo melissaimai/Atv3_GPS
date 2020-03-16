@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 ﻿Juliana Tacacima 2040481813019
 
 Marcos Vinícius Lourenço Teixeira 2040481813002
 
+=======
+﻿Juliana Tacacima 2040481813019
+
+Marcos Vinícius Lourenço Teixeira 2040481813002
+
+>>>>>>> 76574815ec7047ebc12f4357d14c6fe104eb481f
 Melissa Yuri Campos Imai 2040481813022
