@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPS_parte2</string>
+    <string name="conceder">GPS-Berechtigung erteilen</string>
+    <string name="ativar">GPS aktivieren</string>
+    <string name="desativar">GPS deaktivieren</string>
+    <string name="iniciar">Tour starten</string>
+    <string name="terminar">Kurs beenden</string>
+    <string name="DistanceTravelled">Zurückgelegte Strecke</string>
+    <string name="ElapsedTime">Vergangene Zeit</string>
+    <string name="searchAdress">Geben Sie die Adresse ein</string>
+</resources>

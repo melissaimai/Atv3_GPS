@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPS_parte2</string>
+    <string name="searchAdress">Digite o endereço</string>
+    <string name="ElapsedTime">Tempo passado</string>
+    <string name="DistanceTravelled">Distância percorrida</string>
+    <string name="ativar">Ativar GPS</string>
+    <string name="desativar">Desativar GPS</string>
+    <string name="iniciar">Iniciar Percurso</string>
+    <string name="terminar">Terminar Percurso</string>
+    <string name="conceder">Conceder Permissão de GPS</string>
+</resources>
