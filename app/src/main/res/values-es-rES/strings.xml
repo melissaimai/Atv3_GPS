@@ -9,4 +9,9 @@
     <string name="DistanceTravelled">Distancia recorrida</string>
     <string name="ElapsedTime">Tiempo pasado</string>
     <string name="searchAdress">Ingrese la direccion</string>
+    <string name="activate_location">Por favor, habilite la ubicación</string>
+    <string name="add_permision">" Por favor conceda permiso"</string>
+    <string name="requesting">Ordenando ...</string>
+    <string name="seconds">" segundos"</string>
+    <string name="meters">" metros"</string>
 </resources>

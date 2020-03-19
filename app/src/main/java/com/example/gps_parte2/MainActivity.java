@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         public void onLocationChanged(final Location location) {
             if (last != null) {
                 distance += last.distanceTo(location);
-                distanceEditText.setText(distance + " metros");
+                distanceEditText.setText(distance + getString(R.string.meters));
             }
             last = location;
         }
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                timeEditText.setText((++time) + " segundos");
+                timeEditText.setText((++time) + R.string.seconds);
             }
         }, 0, 1000);
     }
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             else
-                Toast.makeText(this, "Favor conceder permissão", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.add_permision), Toast.LENGTH_SHORT).show();
         });
         deactivate.setOnClickListener(ignored -> {
             locationManager = null;
@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnIniciar).setOnClickListener(ignored -> {
             distance = time = 0;
             if (locationManager == null || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-                Toast.makeText(this, "Favor ativar localização", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.activate_location), Toast.LENGTH_SHORT).show();
             else {
                 activate.setEnabled(false);
                 deactivate.setEnabled(false);
-                distanceEditText.setText("Requisitando...");
-                timeEditText.setText("Requisitando...");
+                distanceEditText.setText(getString(R.string.requesting));
+                timeEditText.setText(R.string.requesting);
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100, locationListener);
                 startTimer();
                 terminate.setEnabled(true);

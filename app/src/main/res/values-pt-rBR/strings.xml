@@ -9,4 +9,9 @@
     <string name="iniciar">Iniciar Percurso</string>
     <string name="terminar">Terminar Percurso</string>
     <string name="conceder">Conceder Permissão de GPS</string>
+    <string name="add_permision">Favor conceder permissão</string>
+    <string name="activate_location">Favor ativar localização</string>
+    <string name="requesting">Requisitando...</string>
+    <string name="seconds">" segundos"</string>
+    <string name="meters">" metros"</string>
 </resources>
